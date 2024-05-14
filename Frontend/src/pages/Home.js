@@ -1,46 +1,41 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+// import { useState, useEffect } from 'react';
+// import axios from 'axios'
+import styles from '../styles/Home.module.css';
 
-import logodark from '../assets/logo-dark.svg'
-import board from '../assets/icon-board.svg'
+import Boards from '../components/Boards';
+
+
+import verticleEllipsis from '../assets/icon-vertical-ellipsis.svg';
+
+
 
 const Home = () => {
+
+
+
   return (
     <main>
-          <aside className={styles.board_menu}>
-                <div className={styles.logo_container}>
-                    <img src={logodark} alt='Kanban' className={styles.logo}/>
+        <Boards />
+
+        <div className={styles.primary_content}>
+            <section className={styles.platform_launch}>
+                <h1>Platform Launch</h1>
+
+                <div className={styles.platform_addTask_container}>
+                    <button>+ Add Task</button>
+                    <img alt='' src={verticleEllipsis}/>
                 </div>
+            </section>
 
 
-                <div className={styles.boards_container}>
-                    <p>ALL BOARDS (3)</p>
 
-                    <div className={styles.board_active}>
-                        <img src={board} alt=''/>
-                        <button>Placeholder</button>
-                    </div>
-                    <div className={styles.board}>
-                        <img src={board} alt=''/>
-                        <button>Placeholder</button>
-                    </div>
-                    <div className={styles.board}>
-                        <img src={board} alt=''/>
-                        <button>Placeholder</button>
-                    </div>
-                    <div className={styles.board}>
-                        <img src={board} alt=''/>
-                        <button>Placeholder</button>
-                    </div>
-                    
+            <section className={styles.task_content_empty}>
+                <h2>This board is empty. Create a new column to get started.</h2>
+                <button>+ Add New Column</button>
+            </section>
+        </div>
 
-                    <div className={styles.create_board}>
-                        <img src={board} alt=''/>
-                        <button>+ Create Board</button>
-                    </div>
-
-                </div>
-          </aside>
     </main>
   )
 }

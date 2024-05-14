@@ -1,0 +1,261 @@
+aside {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.board_menu {
+    height: 100vh;
+    width: 18.75rem;
+    border-right: #E4EBFA 1px solid;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.logo_container {
+    padding: 0 0 0 2rem;
+}
+
+
+.logo {
+    width: 9.5rem;
+    margin-bottom: 3.3rem;
+    margin-top: 2.1rem;
+}
+
+
+
+.boards_container {
+    width: 90%;
+    height: 50vh;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    overflow-y: auto;
+}
+
+.boards_container > p {
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+
+    padding: 0 0 0 2rem;
+    color: #828FA3;
+}
+
+
+.boards_container > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 3rem;
+    width: 80%;
+    
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+
+    padding: 0 0 0 2rem;
+
+    transition: 0.15s;
+}
+
+
+.boards_container > div:hover {
+    background-color: #F4F7FD;
+    cursor: pointer;
+
+    .board_select {
+        color: #635FC7;
+        cursor: pointer;
+    }
+
+    .create_button {
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+/* none active board styles */
+
+.board > img {
+    width: 1rem;
+    height: 1rem;
+    filter: brightness(100%); 
+}
+
+
+
+.board_select {
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #828FA3;
+
+    transition: 0.15s;
+}
+
+
+
+
+
+
+
+
+/* active board styles */
+
+.board_active {
+    background-color: #635FC7;
+}
+
+.board_active > img {
+    width: 1rem;
+    height: 1rem;
+
+    filter: brightness(1000%);
+
+}
+
+.board_active > button {
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+}
+
+
+
+/* create board button */
+
+
+.create_board > img {
+    width: 1rem;
+    height: 1rem;    
+}
+
+
+.create_button {
+    background-color: transparent;
+    border: none;
+    margin-left: 1rem;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #635FC7;
+}
+
+
+
+
+
+
+
+
+
+.theme_hide {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    height: 6.5rem;
+    position: relative;
+    bottom: 1rem;
+}
+
+
+/* dark mode section */
+
+.dark_mode_container {
+    width: 75%;
+    height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5rem;
+    background-color: #F4F7FD;
+
+    margin-bottom: 0.5rem;
+}
+
+.dark_mode_container > img {
+    height: 1.1rem;
+}
+
+.dark_mode_container > button {
+    width: 2.5rem;
+    height: 1.25rem;
+
+    margin: 0rem 1.5rem;
+
+    border-radius: 1rem;
+    border: none;
+
+    background-color: #635FC7;
+    padding: 0rem 0rem 0rem 0.2rem;
+}
+
+
+.dark_mode_container > button:hover {
+    cursor: pointer;
+}
+
+
+
+.dark_mode_container > button > div {
+    background-color: white;
+    width: 0.875rem;
+    height: 0.875rem;
+
+    border-radius: 100%;
+}
+
+
+
+
+
+
+
+
+/* hide sidebar styles */
+
+
+.hide_sidebar_container {
+    display: flex;
+    align-items: center;
+
+    width: 75%;
+}
+
+.hide_sidebar_container > p {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #828FA3;
+}
+
+.hide_sidebar_container > p:hover {
+    cursor: pointer;
+}
+
+
+.hide_sidebar_container > img {
+    height: 1rem;
+    margin-right: 1rem;
+
+    padding: 0;
+}
