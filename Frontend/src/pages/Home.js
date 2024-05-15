@@ -1,9 +1,10 @@
 import React from 'react'
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 // import axios from 'axios'
 import styles from '../styles/Home.module.css';
 
 import Boards from '../components/Boards';
+import AddNewBoard from '../components/AddNewBoard';
 
 
 import verticleEllipsis from '../assets/icon-vertical-ellipsis.svg';
@@ -13,10 +14,20 @@ import verticleEllipsis from '../assets/icon-vertical-ellipsis.svg';
 const Home = () => {
 
 
+    // updating the visibility state of the create boards component
+    const [createBoardState, setCreateBoardState] = useState(false)
+    const updateBoardState = () => {
+        setCreateBoardState(createBoardState => !createBoardState)
+    }
 
   return (
     <main>
-        <Boards />
+        <Boards updateBoardState={updateBoardState}/>
+        
+        {createBoardState && (
+            <AddNewBoard updateBoardState={updateBoardState}/>
+        )}
+        
 
         <div className={styles.primary_content}>
             <section className={styles.platform_launch}>

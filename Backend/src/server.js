@@ -27,6 +27,17 @@ app.get('/', async (req, res) => {
 
 
 
+// creating board
+
+app.post('/board', async (req, res) => {
+
+})
+
+
+
+
+
+
 
 mongoose.connect(process.env.MONGODB_URI, {
     dbName: "Kanban"

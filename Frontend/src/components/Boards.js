@@ -11,10 +11,12 @@ import lightTheme from '../assets/icon-light-theme.svg';
 
 import hideSidebar from '../assets/icon-hide-sidebar.svg';
 
-const Boards = () => {
+const Boards = ({ updateBoardState }) => {
 
     const [boards, setBoards] = useState([])
 
+
+    // fetches mongodb collections, collections represent boards
     useEffect(() => {
         async function getBoards() {
             const response = await axios.get('http://localhost:5000/');
@@ -25,6 +27,7 @@ const Boards = () => {
 
         getBoards()
     }, [])
+
 
     return (
         <aside className={styles.board_menu}>
@@ -45,7 +48,7 @@ const Boards = () => {
 
                     <div className={styles.create_board}>
                         <img src={boardIcon} alt=''/>
-                        <button className={styles.create_button}>+ Create Board</button>
+                        <button className={styles.create_button} onClick={updateBoardState}>+ Create Board</button>
                     </div>
                 </div>
 
