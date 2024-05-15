@@ -57,7 +57,7 @@ const AddNewBoard = ({ updateBoardState }) => {
     }).toString();
 
 
-    await axios.post(`/api/boards?${queryParams}`, {
+    await axios.post(`/api/boards/${queryParams}`, {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -91,7 +91,7 @@ const AddNewBoard = ({ updateBoardState }) => {
 
                 <div className={styles.board_name}>
                     <label>Name</label>
-                    <input onChange={e => setBoardName(e.target.value)} type='text' placeholder='e.g. Web Design' required/>
+                    <input name='name' onChange={e => setBoardName(e.target.value)} type='text' placeholder='e.g. Web Design' required/>
                 </div>
 
                 <div className={styles.add_column}>
@@ -101,7 +101,7 @@ const AddNewBoard = ({ updateBoardState }) => {
 
                   {inputFields.map((input, index) => (
                       <div  key={index} className={styles.task_status}>
-                          <input type='text' value={input} onChange={e => handleInputChange(index, e)} required/>
+                          <input name='column' type='text' value={input} onChange={e => handleInputChange(index, e)} required/>
                           <button type='button' onClick={() => handleDeleteInput(index)}><img alt='Close' src={iconCross}/></button>
                       </div>
                   ))}
